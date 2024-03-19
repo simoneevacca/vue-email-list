@@ -11,7 +11,9 @@
 
 
     <div id='app'>
-
+        <div>Inserisci il numero di mail che vuoi generare (default: 10)</div>
+        <input type="number" v-model="number">
+        <button @click="generate">genera</button>
         <ul>
             <li v-for="mail in mailArray">{{mail}}</li>
         </ul>

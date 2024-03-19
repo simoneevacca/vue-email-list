@@ -13,7 +13,7 @@ createApp({
 
     methods: {
         callApi() {
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < this.number; i++) {
                 
                 axios
                     .get('https://flynn.boolean.careers/exercises/api/random/mail')
@@ -26,6 +26,12 @@ createApp({
                 }
                 console.log(this.mailArray);
 
+        },
+
+        generate() {
+            
+            this.mailArray = []
+            this.callApi()
         }
     },
 
