@@ -9,7 +9,9 @@
 
 <body>
     <div id='app'>
-        <h1>{{randomMail}}</h1>
+        <ul>
+            <li v-for="n in 10">{{randomMail}}</li>
+        </ul>
     </div>
     <!-- Development only cdn, disable in production -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>

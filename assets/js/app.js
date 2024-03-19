@@ -2,21 +2,28 @@ const { createApp } = Vue
 createApp({
     data() {
 
-        
+
         return {
             randomMail: null,
-            callApi() {
-                axios
-                    .get('https://flynn.boolean.careers/exercises/api/random/mail')
-                    .then((response) => {
-                        console.log(response.data.response);
-                        this.randomMail = response.data.response
-                    })
-            }
+            number: 10,
+
         }
     },
 
-    mounted (){
+    methods: {
+        callApi() {
+
+            axios
+                .get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then((response) => {
+                    console.log(response.data.response);
+                    this.randomMail = response.data.response
+                })
+
+        }
+    },
+
+    mounted() {
         this.callApi()
     }
 }).mount('#app')
